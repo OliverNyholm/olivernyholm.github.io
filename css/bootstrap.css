@@ -44,9 +44,11 @@ template {
 }
 a {
   background-color: transparent;
+  color: #cc0047;
 }
 a:active,
 a:hover {
+  color: #cc0047;
   outline: 0;
 }
 abbr[title] {
@@ -1097,15 +1099,16 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #cc0047;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #cc0047;
   text-decoration: underline;
 }
 a:focus {
+  color: #cc0047;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3560,7 +3563,7 @@ tbody.collapse.in {
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  color: #262626;
+  color: #cc0047;
   text-decoration: none;
   background-color: #f5f5f5;
 }
