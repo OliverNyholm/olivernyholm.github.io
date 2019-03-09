@@ -107,16 +107,9 @@ footer {
     background: rgba(255,255,255,0.9);
 }
 
-    footer p {
-        margin: 0;
-        padding: 50px 0;
-    }
-
-.center-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+footer p {
+    margin: 0;
+    padding: 50px 0;
 }
 
 .videoWrapper {
@@ -187,11 +180,11 @@ footer {
         background: rgba(255,255,255,0.9);
     }
 
-    .nav > li > a {
+    .nav>li>a {
         padding: 35px;
     }
 
-    .navbar-nav > li > a {
+    .navbar-nav>li>a {
         line-height: normal;
     }
 
@@ -210,4 +203,30 @@ footer {
         display: table;
         clear: both;
     }
+}
+
+@media only screen and (max-width: 760px) {
+.video-container {                
+        width: 390px;
+        height: 232px; 
+}
+
+.video-container iframe, 
+.video-container object, 
+.video-container embed {
+        width: 390px;
+        height: 232px; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .video-container {
+                width: 235px;
+                height: 139px;
+    }
+
+        .video-container iframe, .video-container object, .video-container embed {
+                width: 235px;
+                height: 139px;
+        }
 }

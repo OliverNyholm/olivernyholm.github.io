@@ -4123,6 +4123,31 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   top: auto;
   left: auto;
 }
+@media only screen and (max-width: 760px) {
+.video-container {                
+        width: 390px;
+        height: 232px; 
+}
+
+.video-container iframe, 
+.video-container object, 
+.video-container embed {
+        width: 390px;
+        height: 232px; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .video-container {
+                width: 235px;
+                height: 139px;
+    }
+
+        .video-container iframe, .video-container object, .video-container embed {
+                width: 235px;
+                height: 139px;
+        }
+}
 @media (min-width: 768px) {
   .nav-justified > li {
     display: table-cell;
