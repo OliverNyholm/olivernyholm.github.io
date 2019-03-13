@@ -34,7 +34,7 @@
 <body>
 
     <div class="brand">Oliver Nyholm</div>
-    <div class="address-bar">Game Programmer</div>
+    <div class="address-bar">AI and Gameplay Programmer</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Madame Légume</a>
+                <a class="navbar-brand" href="index.html">A Weapon Odyssey</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -79,13 +79,13 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Madame Légume</strong>
+                        <strong>A Weapon Odyssey</strong>
                     </h2>
                     <hr>
                 </div>
                 <div class="col-lg-12" align="center">
                     <div class="videoWrapper">
-                        <iframe width="560" height="349" src="https://www.youtube.com/embed/qOK9MkPpXrQ" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="349" src="https://www.youtube.com/embed/7A0DHKSde9E" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -102,11 +102,11 @@
                 </div>
                 <div class="col-md-6">
                     <p>
-                        Madame Légume is a platformer puzzle game created in Unity3D. I created this project during Christmas holiday 2016 as a base for my bachelor's thesis.
-                        The game is about the Madame Légume, a lady made out of vegetables. She is tired of this world, and wants to end her life, yet in a noble way. Therefore, she needs to
-                        travel to the organic waste bin. She can't climb to the platform alone, so she needs to place out vegetables correctly, creating a path to the end.
+                        A Weapon Odyssey was my fourth project at the Game Assembly. The game is an "open world" adventure game that was created over eight weeks.
                     </p>
-
+                    <p>
+                        "Crashed on an alien planet, a girl must..."
+                    </p>
                 </div>
             </div>
         </div>
@@ -116,24 +116,34 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        Madame Légume
-                        <strong>and my Bachelor's thesis</strong>
+                        My
+                        <strong> contribution</strong>
                     </h2>
                     <hr>
                 </div>
                 <div class="col-md-8">
                     <p>
-                        The point of creating the game was because I had wanted to create the game for some time, and I also wanted to study procedural content generation (PCG) as a subject to my thesis.
-                        So I combined the two, and me and my thesis partner created to generators, evaluating strengths between two techniques. One rule-based generator and one evolved with grammatical evolution.
+                        My two main contributions to the game was the whole pipeline from Unity to Tga2D and the AI of the game.
+                        As I was responsible for the pipeline, I was able to create a structure of the levels in a way that would benefit
+                        my AI characters. The level designers would structure the levels into rooms, each having its own grid. This would make the 
+                        AI:s pathfinding cheap as the grid would be fairly small. Also, as the dungeons were divided into rooms, only one room at a time needed to be updated.
                     </p>
                     <p>
-                        The game was difficult to procedurally generate, as the playability is tricky to solve. In the evolutionary generator, the playability was solved by calculating a path with a
-                        depth-first search algorithm. In the rule-based, the generator calculated where the vegetables were needed. Both generators produce a majority of poor levels, but manage to create
-                        good levels as well, but only works offline, selecting the good ones.
+                        The AI in the game was simple and didn't need any advanced structure. The base AI characters used a <b>decision-tree</b> checking distance and sight.
+                        The bosses used a <b>"state-machine"</b> for their phases, some more advanced than others.
+                    </p>
+                    <p>
+                        <pre class='brush: cpp'>
+void CoolBool()
+{
+    //TODO XD
+    return "Kill Player!";
+}
+                        </pre>
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <img class="img-responsive img-border-left" src="img/madameSolo.png" alt="">
+                    <img class="img-responsive img-border-left" src="img/enemiesAWO.png" alt="">
                 </div>
                 <div class="clearfix"></div>
             </div>
