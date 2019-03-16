@@ -102,6 +102,13 @@ hr {
     margin: 0 auto 0;
 }
 
+.img-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
@@ -147,6 +154,12 @@ footer p {
     .img-left {
         float: left;
         margin-right: 25px;
+    }
+
+    .img-center
+    {
+        width: 300;
+        width: 300;
     }
 
     .address-bar {
@@ -203,6 +216,12 @@ footer p {
         display: table;
         clear: both;
     }
+
+    .img-center
+    {
+        width: 300;
+        width: 300;
+    }
 }
 
 @media only screen and (max-width: 760px) {
@@ -217,6 +236,12 @@ footer p {
         width: 390px;
         height: 232px; 
     }
+
+    .img-center
+    {
+        width: 300;
+        width: 300;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -229,4 +254,10 @@ footer p {
                 width: 235px;
                 height: 139px;
         }
+
+    .img-center
+    {
+        width: 300;
+        width: 300;
+    }
 }
