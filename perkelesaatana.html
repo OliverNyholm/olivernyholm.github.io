@@ -125,22 +125,42 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <p>
-                        As we were four programmers, our task force was spread out heavily. I created two of the base enemies and the first and last boss.
+                        As we were four programmers, our task force was spread out heavily. In the AI deparment, I created two of the base enemies and first and last boss.
+                        Below is a snippet of my first ever object pool, which was created in the BulletFactory class. The CPU's cache memory really loved me after this!
+                        I posted it as code if you want to copy paste it if you are inspired by the new operator for each element.
                     </p>
                     <p>
                         <pre class='brush: cpp'>
-void CoolBool()
+//End of creation in BulletFactory.
+for (int index = 0; index &lt; static_cast&lt;int&gt;(arrayOfBullets.Size()); index++)
 {
-    //TODO XD
-    return "Kill Player!";
+    myBulletQueues.Add(new std::queue<Bullet*>());
+    for (unsigned short x = 0; x &lt; myQueueSize; x++)
+    {
+        myBulletQueues[index]->push(new Bullet(*myBulletTypes[index], { 0.0f, 0.0f }, { 0.0f, 0.0f }, this, myEffectsManager));
+    }
 }
                         </pre>
                     </p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="img/kremlin.png" alt="">
+                </div>
+                <div class="col-md-6">
+                        <p>
+                            The final boss, called Kremlin, even though it actually is the <i>Saint Basil's Cathedral</i> was tricky and unbalanced.
+                            There were a total of 16 different places where the boss would shoot from. In the first phase, the turrets would rotate in 
+                            an ellipse around the main tower, where sorting their draw order had to be taken into consideration.
+                        </p>
+                        <p>
+                            The rotation value in the first phase was to determine what position every turret should have. They grabbed their parents rotation
+                            and applied it with their own offsetRotation. Then some cos and sin fun stuff.
+                        </p>
+                    </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="img/perkeleKremlinCode.png" alt="">
                 </div>
                 <div class="clearfix"></div>
             </div>
