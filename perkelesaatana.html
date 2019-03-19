@@ -19,8 +19,10 @@
     <link href="css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
+        rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,7 +87,8 @@
                 </div>
                 <div class="col-lg-12" align="center">
                     <div class="videoWrapper">
-                        <iframe width="560" height="349" src="https://www.youtube.com/embed/l90Ive9GMYg" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="349" src="https://www.youtube.com/embed/l90Ive9GMYg" frameborder="0"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -102,13 +105,16 @@
                 </div>
                 <div class="col-md-6">
                     <p>
-                        Perkele Saatana was the second game project at the Game Assembly and our first created in C++, using The Game Assemblies Tga2D home engine.
-                        It was created over an eight week period, where we were four programmers. Our reference game was the SNES game, <b>R-type 3</b>
+                        Perkele Saatana was the second game project at the Game Assembly and our first created in C++,
+                        using The Game Assemblies Tga2D home engine.
+                        It was created over an eight week period, where we were four programmers. Our reference game
+                        was the SNES game, <b>R-type 3</b>
                     </p>
                     <p>
-                        "In 1939 the red madman from the east attacked the peaceful villages of Finland... When the delusional madman decided to attack, 
-                        he did not know of Finlands bravery and fighting spirit.. Nor did he know of "Perkele Saatana"! 
-                        The super advanced one-man-army aero fighter! Perkele Saatana must push back the madman! 
+                        "In 1939 the red madman from the east attacked the peaceful villages of Finland... When the
+                        delusional madman decided to attack,
+                        he did not know of Finlands bravery and fighting spirit.. Nor did he know of "Perkele Saatana"!
+                        The super advanced one-man-army aero fighter! Perkele Saatana must push back the madman!
                         ...and put him in his grave!"
                     </p>
                 </div>
@@ -127,9 +133,12 @@
                 </div>
                 <div class="col-md-12">
                     <p>
-                        As we were four programmers, our task force was spread out heavily. In the AI deparment, I created two of the base enemies and first and last boss.
-                        Below is a snippet of my first ever object pool, which was created in the BulletFactory class. The CPU's cache memory really loved me after this!
-                        I posted it as code if you want to copy paste it if you are inspired by the new operator for each element.
+                        As we were four programmers, our task force was spread out heavily. In the AI deparment, I
+                        created two of the base enemies and first and last boss.
+                        Below is a snippet of my first ever object pool, which was created in the BulletFactory class.
+                        The CPU's cache memory really loved me after this!
+                        I posted it as code if you want to copy paste it if you are inspired by the new operator for
+                        each element.
                     </p>
                     <p>
                         <pre class='brush: cpp'>
@@ -149,19 +158,33 @@ for (int index = 0; index &lt; static_cast&lt;int&gt;(arrayOfBullets.Size()); in
                     <img class="img-responsive img-border-left" src="img/kremlin.png" alt="">
                 </div>
                 <div class="col-md-6">
-                        <p>
-                            The final boss, called Kremlin, even though it actually is the <i>Saint Basil's Cathedral</i> was tricky and unbalanced.
-                            There were a total of 16 different places where the boss would shoot from. In the first phase, the turrets would rotate in 
-                            an ellipse around the main tower, where sorting their draw order had to be taken into consideration.
-                        </p>
-                        <p>
-                            The rotation value in the first phase was to determine what position every turret should have. They grabbed their parents rotation
-                            and applied it with their own offsetRotation. Then some cos and sin fun stuff.
-                        </p>
-                    </div>
+                    <p>
+                        The final boss, called Kremlin, even though it actually is the <i>Saint Basil's Cathedral</i>
+                        was tricky and unbalanced.
+                        There were a total of 22 different places where the boss would shoot from. In the first phase,
+                        the turrets would rotate in an ellipse around the main tower, where sorting their draw order had to be taken into
+                        consideration.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="img/kremlinFight.gif" alt="">
+                </div>
+                <div class="col-md-12">
+                    <hr>
+                </div>
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="img/perkeleKremlinCode.png" alt="">
                 </div>
+                <div class="col-md-6">
+                    <p>
+                        The rotation value in the first phase was to determine what position every turret should have.
+                        They grabbed their parents rotation
+                        and applied it with their own offsetRotation. Then some cos and sin fun stuff.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                        <img class="img-responsive img-border-left" src="img/perkeleKremlinTowerCode.png" alt="">
+                    </div>
                 <div class="clearfix"></div>
             </div>
         </div>
