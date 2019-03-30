@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Oliver Nyholm</title>
+    <link rel="shortcut icon" href="img/titleImage.png" type="image/png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
+        rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">Oliver Nyholm</div>
+    <div class="address-bar">AI and Gameplay Programmer</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Raggarök</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="games.html">Games</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Raggarök</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-12">
+                    <br/>
+                    <p class="text-center">
+                       <strong> C++ | Space Shooter | Movement | Tools | Pipeline</strong>
+                    </p>
+                    <hr>
+                    <div class="videoWrapper">
+                        <iframe width="560" height="349" src="https://www.youtube.com/embed/vHkspJhGu3k" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>About the Game</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="img/RaggarökConny.gif" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Raggarök was my fifth project at the Game Assembly, and the first with the Wizard Loaf crew. The game was created
+                        in our own C++ and DirectX11 engine, Yellowsnow over the span of 10 weeks.
+                        The projects reference game was <i>Star Wars Battlefront 2</i> during the space fight.
+                    </p>
+                    <p>
+                        "Ram through the imperial greaser organisation and ignite a war that will end all raggare: Raggarök."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        My
+                        <strong> contribution</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <p>
+                        <b>TLDR:</b> <i>Generalist</i>.
+                        <br/>
+                         Player Movement and Camera, Spline, Trigger, Enemy, Turret and Turret Projectiles, Unity export pipeline to own engine, 
+                         <a href="showroom.html">Showroom</a>, Particle Editor.
+                         <br/>
+                    </p>
+                    <hr>
+                </div>
+                <div class="col-lg-12" align="center">
+                    <br/>
+                    <p><strong>Movement</strong></p>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border" src="img/raggarok/movement.gif" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        I worked on the players movement and camera during the last beta sprint and was struggling to find a balance where
+                        movement felt nice while the camera was moving along the spline.
+                    </p>
+                    <p>
+                       In the end I found something to work fairly well, where I would clamp the players horizontal position to be inside 15% of the screens width,
+                       and clamping at the top of the screen. As the direction to the mouse positition relative to the camera and player is shaped as a sphere,
+                       I tired out different values and found a middle ground where the speed at the edges felt as good as when being at the center of the screen.
+                       I also placed the player one meter under the crosshair, always enabling vision of where you are shooting.
+                    </p>
+                </div>
+                <div class="col-lg-12">
+                    <img class="img-responsive img-border" src="img/raggarok/playerMovmentCode.png" alt="">
+                </div>
+                <div class="col-md-12" align="center">
+                    <hr>
+                    <br/>
+                    <p><strong>Turret Projectile</strong></p>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                        <img class="img-responsive img-border" src="img/raggarok/turretExplosion.gif" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            The turrets in the game were stationary and shot our projectiles that would predict where the player would be on the spline.
+                            Below is a sample of code where the turret would fetch data from the players spline, using the players speed to find the point on the spline
+                            where the player will be during explosion. I added a randomness of 4 meters from the spline, so that the projectiles wouldn't always explode on the
+                            middle spline and making it more difficult to predict where they would explode.
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                            <img class="img-responsive img-border" src="img/raggarok/turretPredictionCode.png" alt="">
+                        </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
