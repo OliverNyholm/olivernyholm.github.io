@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Raggarök</a>
+                <a class="navbar-brand" href="index.html">Spite - Ragnars Mjöd</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -81,18 +81,18 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Raggarök</strong>
+                        <strong>Spite - Ragnars Mjöd</strong>
                     </h2>
                     <hr>
                 </div>
                 <div class="col-lg-12">
                     <br/>
                     <p class="text-center">
-                       <strong> C++ | Space Shooter | Movement | Tools | Pipeline</strong>
+                       <strong> C++ | Action RPG | AI | Pipeline </strong>
                     </p>
                     <hr>
                     <div class="videoWrapper">
-                        <iframe width="560" height="349" src="https://www.youtube.com/embed/vHkspJhGu3k" frameborder="0"
+                        <iframe width="560" height="349" src="https://www.youtube.com/embed/XaAZoDVee2A" frameborder="0"
                             allowfullscreen></iframe>
                     </div>
                 </div>
@@ -105,16 +105,17 @@
                     <hr>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="img/RaggarökConny.gif" alt="">
+                    <img class="img-responsive img-border-left" src="img/ragnarsmjod/bigWave.jpg" alt="">
                 </div>
                 <div class="col-md-6">
                     <p>
-                        Raggarök was my fifth project at the Game Assembly, and the first with the Wizard Loaf crew. The game was created
+                        Spite - Ragnars Mjöd was my sixth project at the Game Assembly. The game was created
                         in our own C++ and DirectX11 engine, Yellowsnow over the span of 10 weeks at 50% work time.
-                        The projects reference game was <i>Star Wars Battlefront 2</i> during the space fight.
+                        The projects reference game was no surpise <i>Diablo 3</i>.
                     </p>
                     <p>
-                        "Ram through the imperial greaser organisation and ignite a war that will end all raggare: Raggarök."
+                        "After an all night bender with your friends you wake up alone in the snow and surrounded by the undead.
+                        Battle draugr and your ice giants to recover your stolen mead!"
                     </p>
                 </div>
                 <div class="clearfix"></div>
@@ -127,88 +128,94 @@
                     <hr>
                     <h2 class="intro-text text-center">
                         My
-                        <strong> contribution</strong>
+                        <strong> contributions</strong>
                     </h2>
                     <hr>
                 </div>
                 <div class="col-md-12">
                     <h4 class ="tab"><u>AI</u></h4>
                     <p class="tab">
-                        I created base for the enemies that moved a long a spline. I made them shoot the player when they were in a given range and angle.<br/>
-                        Create the turret enemy and the projectile it was shooting.<br/>
-                        I started working on a boss until the boss was cut from the project.
+                        I created the AI characters and the base code for the boss. All were using Behaviour Trees with different trees depending on state.
                     </p>
                     <br/>
                     <h4 class ="tab"><u>Gameplay</u></h4>
                     <p class="tab">
-                        Worked on player controls and camera, making it feel nice. Moving with the mouse and shooting towards the cursor.<br/>
-                        Created the trigger component.
+                        Created leap ability at alpha stage before moving on to AI.<br/>
+                        Participated in creating ActorComponent that collected movement data from ControllerComponents. (PlayerController, AIController, BossController).
                     </p>
                     <br/>                       
                     <h4 class ="tab"><u></u>Pipeline</u></h4>
                     <p class="tab">
-                        Worked on the pipeline where Unity was our level editor where the data was exported to our engine.<br/>
+                        Was part of exporting and importing the navmesh to the engine from Unity via Houdini. Unity has a magical navmesh that needs to 
+                        be tweaked a lot when trying to export it. <br/>
+                        I worked close together with the Technical Artists this project and helped them when needed.
                     </p>
                     </br>
                     <h4 class ="tab"><u>Tools</u></h4>
                     <p class="tab">
-                        I created our Particle Editor in Unity.<br/>
-                        Created a <a href="showroom.html">Showroom</a> that was mandatory for the game project. <br/>
+                        I continued working on the particle editor when new features were added to the particle emitters. <br/>
+                        Added debug "one-liners" to be able to visualise lines, boxes, spheres during development. <br/>
+                        Created a free system to toggle between player camera and a camera to move around freely with for debugging. <br/>
                     </p>
                     <hr>
                 </div>
             </div>
         </div>
         <div class="clearfix"></div>
-
         <div class="row">
             <div class="box">
-                <div class="col-lg-12" align="center">
+                <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong> Movement</strong>
+                        <strong> Draugr</strong>
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
-                    <img class="img-responsive img-border" src="img/raggarok/movement.gif" alt="">
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <p>
-                        I worked on the players movement and camera during the last beta sprint and was struggling to find a balance where
-                        movement felt nice while the camera was moving along the spline.
+                        The Draugr's behaviour tree can be found <a href="behaviourTree.html">here</a>.
                     </p>
                     <p>
-                       In the end I found something to work fairly well, where I would clamp the players horizontal position to be inside 15% of the screens width,
-                       and clamping at the top of the screen. As the direction to the mouse positition relative to the camera and player is shaped as a sphere,
-                       I tired out different values and found a middle ground where the speed at the edges felt as good as when being at the center of the screen.
-                       I also placed the player one meter under the crosshair, always enabling vision of where you are shooting.
+                        The biggest obstacle to overcome of the project was maintaining the base enemy, the Draugr. The draugr were melee
+                        entities which the level designers spawned A LOT of. As there were a lot of enemies, I had to do several optimization
+                        to reduce risk of low framerate. One solution was that all enemies entity ID:S were placed in a grid, reducing the amount
+                        of enemies to check around them when using steering behaviours. Another one was that when enemies were far away from the player,
+                        they had leaders that would do pathfinding and checking sight to the player, while the "minions" were idling.
                     </p>
-                </div>
-                <div class="col-lg-12">
-                    <img class="img-responsive img-border" src="img/raggarok/playerMovmentCode.png" alt="">
-                </div>
-                <div class="col-md-12" align="center">
-                    <br/>
+                    <p>
+                        The way leaders were determined was by a simple function, that was called when enemies were spawned, or when their current leader
+                        was killed. Below is the code for finding a nearby leader. The game had a PollingStation, which the enemies used to get entity IDs from.
+                        In this case, they asked for a list of all current leader IDs. If there was none nearby, they become the leader and add themselves to the list.
+                        If they were previously following a leader, they changed their state to engaged, moving towards the player.
+                    </p>
                     <hr>
-                    <h2 class="intro-text text-center">
-                        <strong> Turret Projectile</strong>
-                    </h2>
+                    <img class="img-responsive img-border" src="img/ragnarsmjod/findLeaderCode.png" alt="">
                     <hr>
                 </div>
-                <div class="col-md-6">
-                        <img class="img-responsive img-border" src="img/raggarok/turretExplosion.gif" alt="">
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <p>
-                        The turrets in the game were stationary and shot our projectiles that would predict where the player would be on the spline.
-                        Below is a sample of code where the turret would fetch data from the players spline, using the players speed to find the point on the spline
-                        where the player will be during explosion. I added a randomness of 4 meters from the spline, so that the projectiles wouldn't always explode on the
-                        middle spline and making it more difficult to predict where they would explode.
+                        Another issue that needed to be solved for the Draugr was that when there were so many melee entities, I could not have 50
+                        units all grouping around the player trying to attack whilest trying to separate at the same time. To solve that issue,
+                        I placed 12 attack slots that the Draugr could fight at. This would only allow twelve characters to attack the player at the same time,
+                        which brings me to the next issue; making sure the others wait for their turn.
                     </p>
                 </div>
-                <div class="col-lg-12">
-                    <img class="img-responsive img-border" src="img/raggarok/turretPredictionCode.png" alt="">
+                <div class="col-md-6">
+                        <p>
+                        The solution to that issue was to check in front of the Draugr, seeing if there was any other units waiting for their turn.
+                        Below is a node in the behaviour tree, that was called only a few times per second. First, they would check if they had an attack slot,
+                        and would in that case ignore if there were any others waiting ahead of them. They would also ignore checking if there were any others waiting in front of them
+                        at a certain distance, which would allow them to try move closer, creating more circular formations surrounding the player. If they were close enough, they
+                        would also ignore the fact and just hit the player instead. Finally, if none of the above statements were given, they would raycast and check if there was 
+                        another enemy waiting in front of them.
+                    </p>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border" src="img/ragnarsmjod/draugrWait.gif" alt="">
+                </div>
+                <div class="col-md-12">
+                    <img class="img-responsive img-border" src="img/ragnarsmjod/waitingEnemyCode.png" alt="">
                 </div>
             </div>
             <div class="clearfix"></div>

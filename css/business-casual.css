@@ -208,6 +208,10 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
     }
+
+    .tab { 
+        margin-left: 40px;
+    }
 }
 
 @media screen and (min-width:1200px) {
