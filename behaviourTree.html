@@ -83,12 +83,55 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-lg-12">
-                    <h1 class="brand-name">Soon!</h1>
+                <div class="col-lg-6">       
+                    <img class="img-responsive img-border" src="img/behaviourTree/patroller.gif" alt="">                    
                 </div>
-                <div class="clearfix"></div>
+                <div class="col-lg-6">
+                    <h2 class="intro-text text-center">
+                        <strong>Final Result</strong>
+                    </h2>
+                    <hr>
+                    <p>
+                        The final result of our behaviour tree was created and visualized in our script editor.
+                    </p>        
+                </div>
+                <div class="col-lg-12">
+                    <hr>
+                    <p>
+                        The AI characters in the <a href="ragnarsmjod.html">6th project</a> and the 7th project all used behaviour trees to do their game logic.
+                        <i>Spite - Ragnars Mjöd</i> was the first project that used behaviour tree and it was all done in code. To visualize the behaviour tree, 
+                        I drew all logic in <b>Paint</b> (Ouch!). This was tedious, since when I wanted to change the tree, I had to draw around in paint as well.
+                    </p>
+                    <img class="img-responsive img-border" src="img/behaviourTree/BTDraugr.png" alt="">                    
+                    <p>
+                        During the 6th project, we implemented a visual script editor that was part of an assignment. And as we started our 7th project, I wanted to
+                        implement support to create my behaviour trees in it as well. This would increase the speed of which I can work with the AI, and it would also
+                        allow me to let designers tweak behaviours as well. During <b>pre-production</b>, it was implemented and upp and running!
+                    </p>
+                    <img class="img-responsive img-border" src="img/behaviourTree/terroristBT.png" alt="">                    
+                </div>
+                <div class="col-lg-12">
+                    <p>
+                        After the 7th project's <b>alpha sprint</b>, I was inspired to visualize the AI characters in the editor, 
+                        much how Unreal Engine does with their behaviour trees.
+                        So after the first of two <b>beta</b> sprints, I added the possibility to visualize what the AI was doing in the editor.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <p>
+                        The solution to do it was by sending networked messages to the script editor from the engine. The Editor exports out the nodes ID,
+                        which I mapped to the behaviour nodes in engine. When they were triggered, I sent a network message with the ID of the node.
+                        If the editor has a matching node, I set a count of 60 onto that script node, that counts down everytime the window is repainted.
+                        The function is recursive, setting all the connected nodes count as well. Then with the count, I lerp the color and size so it is 
+                        easier to visualize the flow.
+                    </p>        
+                </div>
+                <div class="col-lg-6">       
+                    <img class="img-responsive img-border" src="img/behaviourTree/editorNetwork.png" alt="">                    
+                </div>
             </div>
         </div>
+    <div class="clearfix"></div>
     </div>
     <!-- /.container -->
     <!-- jQuery -->
