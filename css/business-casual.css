@@ -109,6 +109,18 @@ hr {
     width: 40%;
 }
 
+#img-popup
+{
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#img-popup:hover
+{
+	opacity: 0.7;
+}
+
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);

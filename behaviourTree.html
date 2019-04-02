@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -84,7 +85,7 @@
                     <hr>
                 </div>
                 <div class="col-lg-6">       
-                    <img class="img-responsive img-border" src="img/behaviourTree/patroller.gif" alt="">                    
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/patroller.gif" alt="">                    
                 </div>
                 <div class="col-lg-6">
                     <h2 class="intro-text text-center">
@@ -97,20 +98,25 @@
                 </div>
                 <div class="col-lg-12">
                     <hr>
+                </div>
+                <div class="col-lg-6">
                     <p>
                         The AI characters in the <a href="ragnarsmjod.html">6th project</a> and the 7th project all used behaviour trees to do their game logic.
                         <i>Spite - Ragnars Mjöd</i> was the first project that used behaviour tree and it was all done in code. To visualize the behaviour tree, 
                         I drew all logic in <b>Paint</b> (Ouch!). This was tedious, since when I wanted to change the tree, I had to draw around in paint as well.
                     </p>
-                    <img class="img-responsive img-border" src="img/behaviourTree/BTDraugr.png" alt="">                    
                     <p>
                         During the 6th project, we implemented a visual script editor that was part of an assignment. And as we started our 7th project, I wanted to
                         implement support to create my behaviour trees in it as well. This would increase the speed of which I can work with the AI, and it would also
                         allow me to let designers tweak behaviours as well. During <b>pre-production</b>, it was implemented and upp and running!
                     </p>
-                    <img class="img-responsive img-border" src="img/behaviourTree/terroristBT.png" alt="">                    
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/BTDraugr.png" alt="Behaviour Tree in Project 6. Paint &lt;3 ">
                 </div>
                 <div class="col-lg-12">
+                    <hr>
+                    <img class="img-responsive img-border" src="img/behaviourTree/terroristBT.png" alt="">                    
                     <p>
                         After the 7th project's <b>alpha sprint</b>, I was inspired to visualize the AI characters in the editor, 
                         much how Unreal Engine does with their behaviour trees.
@@ -124,18 +130,29 @@
                         If the editor has a matching node, I set a count of 60 onto that script node, that counts down everytime the window is repainted.
                         The function is recursive, setting all the connected nodes count as well. Then with the count, I lerp the color and size so it is 
                         easier to visualize the flow.
-                    </p>        
+                    </p>
+                    <p>
+                        I made the connection UDP, in order for both clients to be opened and closed whenever, ignoring required handshakes and sending
+                        messages back and forth.
+                    </p>
                 </div>
-                <div class="col-lg-6">       
-                    <img class="img-responsive img-border" src="img/behaviourTree/editorNetwork.png" alt="">                    
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/editorNetwork.png" alt="Network in Script Editor">
                 </div>
             </div>
         </div>
     <div class="clearfix"></div>
     </div>
+
+    <!-- Model Code for cool images-->
+    <div id="myModal" class="modal">
+            <img class="modal-content" id="popupImage">
+            <div id="caption"></div>
+        </div>
     <!-- /.container -->
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/modal.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
