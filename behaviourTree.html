@@ -49,7 +49,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Showroom</a>
+                <a class="navbar-brand" href="index.html">Behaviour Tree</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -85,18 +85,26 @@
                     <hr>
                 </div>
                 <div class="col-lg-6">       
-                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/patroller.gif" alt="">                    
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/patroller.gif" alt="An AI patrolling between waypoints, visualized with the pink connections.">                    
                 </div>
                 <div class="col-lg-6">
                     <h2 class="intro-text text-center">
-                        <strong>Final Result</strong>
+                        <strong>Summary</strong>
                     </h2>
                     <hr>
                     <p>
-                        The final result of our behaviour tree was created and visualized in our script editor.
+                        During the school's AI course, we received a behaviour tree base project for an assignment to implement an AI with. I used this base code
+                        for the AI in project 6, but it was difficult to build and visualize in code. <br/>
+                        So in project 7, I modified our script editor to support my own script nodes
+                        that would be used to create behaviour trees. The final result can be seen in the gif, where I also networked a communication between the editor 
+                        and the engine, allowing me to visualize the flow in the behaviour tree. Much like Unreal does.
                     </p>        
                 </div>
                 <div class="col-lg-12">
+                    <br/>
+                    <h2 class="intro-text text-center">
+                        <strong>About</strong>
+                    </h2>
                     <hr>
                 </div>
                 <div class="col-lg-6">
@@ -138,6 +146,38 @@
                 </div>
                 <div class="col-lg-6">
                     <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/editorNetwork.png" alt="Network in Script Editor">
+                </div>
+                <div class="col-lg-12">
+                    <br/>
+                    <h2 class="intro-text text-center">
+                        <strong>Creating Nodes</strong>
+                    </h2>
+                    <hr>
+                    <p>
+                        Our script editor worked with Squirrel as programming language in the background, that then communicated to C++. To create a 
+                        Behaviour Tree node, I first create a <i>.nut</i> file that would work as a node in the script editor. The nut file had two functions;
+                        holding a name and calling a function in the C++ Engine. The function in the C++ engine would collect the nodes arguments
+                        and send a message to the <b>Behaviour Tree Factory</b>, telling it to create a node.
+                    </p>
+                    <p>
+                        The Behaviour Tree Factory was a class that would create and store "blueprints" of all the behaviour trees created in the script editor.
+                        At engine startup, the factory would read all the behaviour tree .xml files that the editor had created.
+                        The .xml files were scripts that would start at the root node and parse through all connections. The factory would start the scripts, 
+                        and then collect all the messages from the node scripts, and add them to the current tree in creation.<br/>
+                        Our scripting system was covered with wrapped layers, not exposing squirrel to the rest of the engine. As I wanted to continue with this philosophy,
+                        I had to keep the C++ bridge functions behind the wrapped layers and send messages for which nodes should be created and their data needed.
+                        I wanted to actually work on AI as well and not just a cool editor, I resolved with a quick and dirty switch case to check which 
+                        node was to be created.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/nutFolder.png" alt="Folder with a few of the nut-files read by the script editor">
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/nutCode.png" alt="The Nut file for Spawning Enemies (Used by boss)">
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/behaviourTree/loadingNode.png" alt="Loading nodes in Behaviour Tree Factory">
                 </div>
             </div>
         </div>
