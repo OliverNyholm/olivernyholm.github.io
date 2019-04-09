@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Oliver Nyholm</title>
+    <link rel="shortcut icon" href="img/titleImage.png" type="image/png">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
+        rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="brand">Oliver Nyholm</div>
+    <div class="address-bar">AI and Gameplay Programmer</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Specialisation</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="games.html">Games</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Specialisation</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-12">
+                    <br/>
+                    <p class="text-center">
+                       <strong> AI | Influence Map | Troop Formation </strong>
+                    </p>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/cinematic.gif" 
+                    alt="I did this cinematic sequence a lot during production with epic music in the background">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="intro-text text-center">
+                        <strong>About the Specialisation</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <u>TLDR:</u> With help of an <b>Influence Map</b> that could modify a navmesh in runtime, a <i>God AI</i> would send troops in formation
+                        towards a fortress with a goal of breaching the defense and attacking it's runestone.
+                    </p>
+                    <br/>
+                    <p>
+                        The specialisation was the final course at The Game Assembly where we had 100 hours to specialise ourselves in a game programming field 
+                        and create our webpages. I put around 80 hours into the specialisation.
+                    </p>
+                    <br/>
+                </div>
+                <div class="col-lg-12">
+                    <h2 class="intro-text text-center">
+                        <strong>Initial Goal</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-6">
+                    <p>
+                        When deciding on what I wanted to do for my specialisation, I knew it was AI. But what I wanted to do was unknown. I was in this 
+                        spotify period where I was mostly listening to soundtracks from <i>Lord of the Rings</i> and <i>World of Warcraft</i>. This 
+                        inspired me, with the picture of Uruk-hais attacking Helm's Deep, to create a "<i>God AI</i>" that could send units running in formation,
+                        trying to breach a fortress. I wanted to make something that looked neat.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <iframe src="https://giphy.com/embed/relfWkVkwQ1sk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>           
+                </div>
+                <div class="col-lg-12">
+                    <p>
+                        As a reference for formations, I looked a bit into how <i>Age of Empires</i> troops would run around. I started out with simple formations,
+                        and decided not to work on them much more as it wasn't a huge focus for my specialisation.
+                    </p>
+                    <p>
+                        As I wanted it to be somewhat cool and not code with capsules, I used assets from the previous project, 
+                        <a href="ragnarsmjod.html"> Spite - Ragnars Mjöd</a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!-- Problems and solutions -->
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">                        
+                        <strong>Problems and Solutions</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="intro-text text-center">                        
+                        <strong><u>Influence Map</u></strong>
+                    </h2>
+                    <p>
+                        The god AI didn't have a Saruman telling weakpoints in the defence and ladders to climb over walls with. I needed something for the AI to figure out
+                        which part of the defense was weak and better to attack. To do this, I needed some data to read from when "learning". The solution 
+                        would be to use an influence/heat map to collect data from.
+                        I created a grid for the <i>Influence Map</i> to store data whenever a unit damage an object, a unit died or an object was destroyed.
+                        This data was transported via a postmaster system that I also created for the project.
+                    </p>
+                    <p>
+                        After each attack made by the god AI, the influence map would place out navmesh modifiers on areas that are unwanted or prefered to walk upon.
+                        After placing, the influence map would rebake the navmesh in runtime, creating these areas.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/destroyTower.gif" alt="Destroying the tower gave a lot of good influence 
+                    around the tower that previously was red after it had killed a lot of troops">       
+                </div>
+                <div class="col-lg-12">
+                    <!-- A line break to make images line up nicely below -->
+                    <br/> 
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/influenceMapOverview.jpg" alt="The enemies chose to walk through the crag
+                    instead of pushing towards the front gates since there was a weak spot">       
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/influenceMessage.jpg" alt="The function that gathered the different types 
+                    or messages sent to the influence map">       
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/influenceMapInspector.jpg" alt="Influence Map in Inspector. I like to have 
+                    debug buttons so I can test one feature at a time">
+                </div>
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="intro-text text-center">                        
+                        <strong><u>Navmesh</u></strong>
+                    </h2>
+                    <p>
+                        Although I've had issues with Unity's navmesh in the past, I decided to use it as it would save me a lot of time. The scene had two navmeshes, one for 
+                        the formation generals that would move the formation, and one for the units to walk upon. The difference would was for the formation generals 
+                        navmesh, as it was for a broader agent and would rebake depending on the influence maps data.
+                        When rebaking the navmesh, the troops would either avoid and walk around areas where they have taken a lot of damage, or walk through that area 
+                        where there has been success.
+                    </p>
+                    <p>
+                        Unity however didn't have an option to calculate the cost of a path with the areas crossed, so I had to do that calculation myself,
+                        with help of the influence objects placed by the influence map. At each corner of the path to available targets, I would raycast to the next
+                        corner when calculating the length, addind modifier values depending on the area cost.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/navmeshInfluencers.jpg" alt="The influence map would place navmesh
+                    modifier volumes (Boxes) that would influence the navmesh">             
+                </div>
+                <div class="col-lg-12">
+                    <!-- A line break to make images line up nicely below -->
+                    <br/> 
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/navmeshInfluenced.jpg" alt="After being rebaked, there were areas with
+                    different cost to walk on">       
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/navmeshPaths.jpg" alt="The God AI would try to find a path to each 
+                    target in the scene">       
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/navmeshPathCalculation.jpg" alt="Calculation the distance to each target. 
+                    I chose to divide with 10 to increase the value of walking on prefered areas.">       
+                </div>
+
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="intro-text text-center">                        
+                        <strong><u>Decision Making</u></strong>
+                    </h2>
+                    <p>
+                        The <i>God AI</i> would do the grind work. It would tell the influence map to bake the navmesh, send out troops and do data calculations.
+                        The AI would send out two formation generals with 30 units each to the best target. The calculation of the best target was most definitely the part
+                        that took the longest to work on. There were a lot of numbers and different "fitness" values that needed to be tweaked. And then I was a bit silly 
+                        and created a big map, which could have long distances to run. This could result in longer simulation times. 
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/godRoar.gif" alt="First move, with a roar the AI sends away troops to a 
+                    tower with less health than others.">
+                </div>
+                <div class="col-lg-12">
+                    <br/>
+                    <p>
+                        The best target was the one that had the <u>least amount of failure</u>, biggest <u>threat</u>, most <u>damaged</u> highest <u>value</u>,
+                        best <u>area value</u> and the shortest <u>path cost</u>.
+                        <ul class="tab">
+                            <li>
+                                Least amount of failure was the score given when attacking an object. Damaging would give bonus to the target, while dying would 
+                                reduce the score.
+                            </li>
+                            <li>
+                                Biggest threat was given to towers that attacked back. When they killed a unit, they were given a threat score. If they had killed many,
+                                it was important to try destroy it.
+                            </li>
+                            <li>
+                                Most damaged was simply the current health percentage of the target, with a multiplier of the value of the target.
+                            </li>
+                            <li>
+                                Highest value was given to objects with importance. Walls were low prioroty, while the rune stone has the most.
+                            </li>
+                            <li>
+                                Best area value was calculate from the influence map. From the targets position, the area around it would determine if there had between
+                                success in that region before. Or failure...
+                            </li>
+                            <li>
+                                Finally, the cost of moving to the object was taken into consideration. With the influence on the navmesh, some paths were considered 
+                                "long" to walk and had a lower priority than paths where there had been success.
+                            </li>
+                        </ul>
+                    </p>
+                    <br/>
+                    <p>
+                        Whenever the troops succeeded or failed (they all died), the God AI would do a new calculation to determine which target to attack.
+                        The algorithm was as follows. Influence Navmesh -> Rebake Navmesh -> Calculate best target -> Send out Troops -> Wait for result.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/solution.jpg" alt="The God AI tried multiple solutions, with the best 
+                    solution being destorying the left most towers, being out of range from the other towers and squeezing through to the rune stone.">
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/bestTarget.jpg" alt="The best target was calculated with a bunch 
+                    of different variables for the targets. This function took the most time to tweak to get favorable behaviour">
+                </div>
+
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="intro-text text-center">                        
+                        <strong><u>Formations</u></strong>
+                    </h2>
+                    <p>
+                        As my main focus wasn't formations, I started of creating them early with simple positioning and didn't work much more on them afterwards.
+                        I had a <i>Formation General</i> that handleded the pathfinding to targets. The formation general had a list of units, and depending on which 
+                        formation the general used, it determined their positioning and made them move to those positions. I tried a bit with steering behaviours making them 
+                        avoid each other, but decided to only use it while attacking, as it looked better and more smooth when they could clip into each other when running alone.
+                    </p>
+                    <p>
+                        Unity has a built in Agent obstacle avoidance, but I turned it off as it freaked out the general when the units were close by, which was always.
+                        This caused units to detect obstacles only when close by, trying to move around them afterwards.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/formations.gif" alt="Possibility to switch between formations. 
+                    Formations were saved as scriptable objects, so I could modify them in runtime whilest also saving them.">
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/troopWalk.gif" alt="Troops walking in formation through a narrow edge.">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- Result -->
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Result</strong>
+                    </h2>
+                    <hr>
+                    <p>All good ye ye ye. Soon to come.</p>
+                </div>                
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>  
+    <!-- /.container -->
+
+    <!-- Modal Code for cool images-->
+    <div id="myModal" class="modal">
+            <img class="modal-content" id="popupImage">
+            <div id="caption"></div>
+        </div>
+        <script src="js/modal.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
