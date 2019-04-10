@@ -82,7 +82,7 @@
                 <div class="col-lg-12">
                     <br/>
                     <p class="text-center">
-                       <strong> AI | Influence Map | Troop Formation </strong>
+                       <strong> AI | Influence Map | Navmesh Baking | Learning | Troop Formation </strong>
                     </p>
                     <hr>
                 </div>
@@ -122,19 +122,17 @@
                         inspired me, with the picture of Uruk-hais attacking Helm's Deep, to create a "<i>God AI</i>" that could send units running in formation,
                         trying to breach a fortress. I wanted to make something that looked neat.
                     </p>
+                    <p>
+                        I decided to use <b>Unity</b> as game engine. Since I was quite experienced with Unity, the engine would not hinder me in my work.
+                        I was keen on trying out <i>Unreal</i> again, but then there was a risk of my specialisation turning into trying out Unreal more than AI.
+                        As I wanted it to be somewhat cool and not code with capsules, I used assets from the previous project, 
+                        <a href="ragnarsmjod.html"> Spite - Ragnars Mjöd</a>, and created some own models in Maya.
+                    </p>
                 </div>
                 <div class="col-lg-6">
-                    <iframe src="https://giphy.com/embed/relfWkVkwQ1sk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>           
-                </div>
-                <div class="col-lg-12">
-                    <p>
-                        As a reference for formations, I looked a bit into how <i>Age of Empires</i> troops would run around. I started out with simple formations,
-                        and decided not to work on them much more as it wasn't a huge focus for my specialisation.
-                    </p>
-                    <p>
-                        As I wanted it to be somewhat cool and not code with capsules, I used assets from the previous project, 
-                        <a href="ragnarsmjod.html"> Spite - Ragnars Mjöd</a>
-                    </p>
+                    <div class="video-container" align="center">
+                        <iframe src="https://giphy.com/embed/relfWkVkwQ1sk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </div>        
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -156,7 +154,7 @@
                     </h2>
                     <p>
                         The god AI didn't have a Saruman telling weakpoints in the defence and ladders to climb over walls with. I needed something for the AI to figure out
-                        which part of the defense was weak and better to attack. To do this, I needed some data to read from when "learning". The solution 
+                        which part of the defense was weak and better to attack, something to read from when "learning". The solution 
                         would be to use an influence/heat map to collect data from.
                         I created a grid for the <i>Influence Map</i> to store data whenever a unit damage an object, a unit died or an object was destroyed.
                         This data was transported via a postmaster system that I also created for the project.
@@ -195,15 +193,10 @@
                     </h2>
                     <p>
                         Although I've had issues with Unity's navmesh in the past, I decided to use it as it would save me a lot of time. The scene had two navmeshes, one for 
-                        the formation generals that would move the formation, and one for the units to walk upon. The difference would was for the formation generals 
+                        the formation generals that would move the formation, and one for the units to walk upon. The difference was for the formation generals 
                         navmesh, as it was for a broader agent and would rebake depending on the influence maps data.
-                        When rebaking the navmesh, the troops would either avoid and walk around areas where they have taken a lot of damage, or walk through that area 
-                        where there has been success.
-                    </p>
-                    <p>
-                        Unity however didn't have an option to calculate the cost of a path with the areas crossed, so I had to do that calculation myself,
-                        with help of the influence objects placed by the influence map. At each corner of the path to available targets, I would raycast to the next
-                        corner when calculating the length, addind modifier values depending on the area cost.
+                        When rebaking the navmesh, the troops would either avoid and walk around areas where there previously had been a lot of casualties, 
+                        or walk through an area that had shown success.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -211,7 +204,11 @@
                     modifier volumes (Boxes) that would influence the navmesh">             
                 </div>
                 <div class="col-lg-12">
-                    <!-- A line break to make images line up nicely below -->
+                    <p>
+                        Unity however didn't have an option to calculate the cost of a path with the areas crossed, so I had to do that calculation myself,
+                        with help of the influence objects (boxes in image) placed by the influence map. At each corner of the path to available targets, I would raycast to the next
+                        corner when calculating the length, adding modifier values depending on the area cost.
+                    </p>
                     <br/> 
                 </div>
                 <div class="col-lg-4">
@@ -236,9 +233,9 @@
                     </h2>
                     <p>
                         The <i>God AI</i> would do the grind work. It would tell the influence map to bake the navmesh, send out troops and do data calculations.
-                        The AI would send out two formation generals with 30 units each to the best target. The calculation of the best target was most definitely the part
+                        The AI would send out two formation generals with 30 units each to the best target. The calculation of the best target was the part
                         that took the longest to work on. There were a lot of numbers and different "fitness" values that needed to be tweaked. And then I was a bit silly 
-                        and created a big map, which could have long distances to run. This could result in longer simulation times. 
+                        and created a big map, which could have long distances to run. This resulted in longer simulation times. 
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -248,22 +245,22 @@
                 <div class="col-lg-12">
                     <br/>
                     <p>
-                        The best target was the one that had the <u>least amount of failure</u>, biggest <u>threat</u>, most <u>damaged</u> highest <u>value</u>,
-                        best <u>area value</u> and the shortest <u>path cost</u>.
+                        The final recipe for the best target was the one that had the <u>least amount of failure</u>, biggest <u>threat</u>, most <u>damaged</u>,
+                         highest <u>value</u>, best <u>area value</u> and the shortest <u>path cost</u>.
                         <ul class="tab">
                             <li>
-                                Least amount of failure was the score given when attacking an object. Damaging would give bonus to the target, while dying would 
+                                Least amount of failure was the score given when attacking that target object. Damaging would give bonus to the target, while dying would 
                                 reduce the score.
                             </li>
                             <li>
-                                Biggest threat was given to towers that attacked back. When they killed a unit, they were given a threat score. If they had killed many,
-                                it was important to try destroy it.
+                                Biggest threat was given to towers that defended the base and counter-attacked. When they killed a unit, they were given a threat score. 
+                                If they had killed many, it was important to prioritise and destroy that target.
                             </li>
                             <li>
                                 Most damaged was simply the current health percentage of the target, with a multiplier of the value of the target.
                             </li>
                             <li>
-                                Highest value was given to objects with importance. Walls were low prioroty, while the rune stone has the most.
+                                Highest value was given to objects with importance. Walls were low priority, whilst the runestone has the most.
                             </li>
                             <li>
                                 Best area value was calculate from the influence map. From the targets position, the area around it would determine if there had between
@@ -283,7 +280,7 @@
                 </div>
                 <div class="col-lg-6">
                     <img class="img-responsive img-border" id="img-popup" src="img/specialisation/solution.jpg" alt="The God AI tried multiple solutions, with the best 
-                    solution being destorying the left most towers, being out of range from the other towers and squeezing through to the rune stone.">
+                    solution being destorying the left most towers, being out of range from the other towers and squeezing through to the runestone.">
                 </div>
                 <div class="col-lg-6">
                     <img class="img-responsive img-border" id="img-popup" src="img/specialisation/bestTarget.jpg" alt="The best target was calculated with a bunch 
@@ -298,19 +295,21 @@
                         <strong><u>Formations</u></strong>
                     </h2>
                     <p>
-                        As my main focus wasn't formations, I started of creating them early with simple positioning and didn't work much more on them afterwards.
+                        As my main focus wasn't formations, I started of creating them early with simple positioning.
                         I had a <i>Formation General</i> that handleded the pathfinding to targets. The formation general had a list of units, and depending on which 
                         formation the general used, it determined their positioning and made them move to those positions. I tried a bit with steering behaviours making them 
-                        avoid each other, but decided to only use it while attacking, as it looked better and more smooth when they could clip into each other when running alone.
+                        avoid each other, but decided to only use it while attacking, as it looked better and more smooth when they could clip into each other when running 
+                        to their formation slot.
                     </p>
                     <p>
                         Unity has a built in Agent obstacle avoidance, but I turned it off as it freaked out the general when the units were close by, which was always.
-                        This caused units to detect obstacles only when close by, trying to move around them afterwards.
+                        This caused units to detect obstacles only when close by, trying to move around them afterwards. I didn't see it as a big issue, 
+                        as my simulation map didn't have really tight areas and much collision avoidance.
                     </p>
                 </div>
                 <div class="col-lg-6">
                     <img class="img-responsive img-border" id="img-popup" src="img/specialisation/formations.gif" alt="Possibility to switch between formations. 
-                    Formations were saved as scriptable objects, so I could modify them in runtime whilest also saving them.">
+                    Formations were saved as scriptable objects, so I could modify them in runtime whilst also saving them.">
                     <img class="img-responsive img-border" id="img-popup" src="img/specialisation/troopWalk.gif" alt="Troops walking in formation through a narrow edge.">
                 </div>
             </div>
@@ -326,7 +325,30 @@
                         <strong>Result</strong>
                     </h2>
                     <hr>
-                    <p>All good ye ye ye. Soon to come.</p>
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/finalTarget.jpg" alt="Night mode made it more exciting when reaching the 
+                    runestone.">
+                    <hr>
+                    <p>
+                        The result of the project was a God AI that eventually would crack the gates and reach its target. I am overall pleased with the result,
+                        most happy of reaching my goal of creating something that looked neat! I had a lot of fun moving around and following the characters 
+                        whilest listening to epic music. When I added the final touch with night time, it got even better!
+                    </p>
+                    <p>
+                        I've once again learnt that working with AI takes a lot of time balancing, trying to find the values that make it look good.
+                        Especially with the "learning" AI, I could have been tweaking variables for ages. I found it difficult finding a balance of what 
+                        the correct behaviour should be. Honestly, the troops could run into the same direction over and over again, eventually cracking the base, 
+                        with no casualties taken into consideration. That, however, would not have been fun at all.
+                    </p>
+                    <p>
+                        If I had more time, I would have definitely created some troops on the defending side, creating close combat battles. My 
+                        initial plan was also to have ranged units, but I cut them from the plan quite early as the project already had a high scope. When the enemies attack,
+                        they all kinda clump together, fighting to find a spot where they could attack. This could have been solved with a feature 
+                        where they would wait for their turn to attack. Also, it would have been nice and more of a "battle simulation" to send out troops in intervals, 
+                        instead of only sending out two troops at a time and wait. And finally, of course, tweaked a lot more on the decision making variables.
+                    </p>
+                    <br/>
+                    <hr>
+                    <img class="img-responsive img-border" id="img-popup" src="img/specialisation/nightAttack.gif" alt="Following the AI in night time was even better.">
                 </div>                
             </div>
             <div class="clearfix"></div>
