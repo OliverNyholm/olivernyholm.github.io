@@ -170,7 +170,7 @@
                 <div class="col-md-12">
                     <p>
                         The enemies worked with multiple behaviour trees depending on what combat state they were active in, and the boss had different 
-                        behaviour trees depending on phase. I find that behaviour trees often can crow huge if there are too many states to consider, 
+                        behaviour trees depending on phase. I find that behaviour trees often can grow huge if there are too many states to consider, 
                         so I liked splitting up the trees and switching them out when needed.
                     </p>
                     <p>
@@ -178,10 +178,108 @@
                         at the player whilest moving to a target distance. As they were more tanky due to taped pillows, they didn't need to worry about combat damage.
                     </p>
                     <p>
-                        The base enemies were a bit more complex, as they used <b>cover points</b> in their combat logic. If they found a suitable waypoint nearby when engaged, 
-                        they would run there and use cover behind them when shooting towards the player.
+                        The base enemies were a bit more complex, as they used <b>coverpoints</b> in their combat logic. If they found a suitable coverpoint nearby 
+                        when engaged, they would run there and use cover behind them when shooting towards the player.
                     </p>
                     <hr>
+                </div>
+                
+                <!-- Intro about behaviour tree -->
+                <div class="col-lg-12">
+                    <br/>
+                    <h2 class="intro-text text-center">
+                        <strong>Base Enemy Behaviour Tree</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/gunbritt/fullTerrorist.jpg" alt="The full tree of the base enemy when engaged.">
+                </div>
+                <div class="col-lg-6">
+                    <p>
+                        The picture to the left (above on mobile) shows how the behaviour tree for the base enemy looked like when the enemy is in combat.
+                        There were four different states that the enemy could be in while in combat. 
+                        <ul class="tab">
+                            <li>Find and moving to a new coverpoint.</li>
+                            <li>Shooting at the player from coverpoint</li>
+                            <li>Sitting at a coverpoint while player is not in line of sight</li>
+                            <li>Attacking and moving towards player without coverpoint</li>
+                        </ul>
+                    </p>
+                    <hr>
+                </div>
+
+                <!-- About finding waypoints -->
+                <div class="col-lg-6">
+                    <p>
+                        <b><u>Finding and moving to other coverpoint.</u></b> In this part the enemy first checks if it already doesn't have 
+                        a coverpoint. If it doesn't, the enemy does another check to see if there are any nearby coverpoints that are of use.
+                        If there is one that is close enough, the enemy moves to that coverpoint. The bool, isPlayer in the <i>MoveTo</i> node 
+                        is a simple solution to know if the target position is the players transform or if it should collect the latest targetID 
+                        entered into the behaviour tree's blackboard.
+                    </p>
+                    <p>
+                        I posted a picture of the code for how the enemies find nearby coverpoints. They get a list of coverpoints from a polling station.
+                        The enemies loop through the coverpoints, analysing which coverpoint is the closest to the player. Enemies that are spawned via script,
+                        also have an increased range to find coverpoints. This would allow them to run further distances to coverpoints, where an example are enemies
+                        in the first level that are spawned on an upper floor and run through a door.
+                        If they already have a coverpoint (can happen in stage 3), they also check if the distance to the player is too far away.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <img class="img-responsive img-border" id="img-popup" src="img/gunbritt/findWaypoint.jpg" alt="">
+                    <br/>
+                    <img class="img-responsive img-border" id="img-popup" src="img/gunbritt/nearbyCoverpointCode.jpg" alt="">
+                </div>
+                <div class="col-lg-12">
+                    <hr>
+                </div>
+
+                <!-- About shooting from waypoints -->
+                <div class="col-lg-6">
+                    <p>
+                        <b><u>Shooting at the player from coverpoint.</u></b> The enemies would always check if the player is in range and in line of sight.
+                        If they were, they would aim towards the player and shoot, in this case, 6 times repeated. When they had shot six times, they would crouch down,
+                        reload and stand up again.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/gunbritt/waypointShooting.jpg" alt="">
+                </div>
+                <div class="col-lg-12">
+                        <hr>
+                </div>
+
+                <!-- Sitting behind cover and not seeing player -->
+                <div class="col-lg-6">
+                    <p>
+                        <b><u>Sitting at a coverpoint while player is not in line of sight.</u></b> If the enemies were sitting behind cover, and the player 
+                        runs our of sight, the enemies would wait for six seconds hiding. Then, depending on the situation, the enemies would try find another 
+                        coverpoint or stay put. The solution for <i>shouldSwitchCoverpoint</i> was depending if the player and the enemy were on different 
+                        floors. If they were on different floors, the enemies would not try to move, but if they were, they would drop their coverpoint and 
+                        move closer. If the enemies could not find a better suitable coverpoint, they would drop the coverpoint logic and run to the player and 
+                        shoot in the open.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/gunbritt/cantSeePlayer.jpg" alt="">
+                </div>
+                <div class="col-lg-12">
+                        <hr>
+                </div>
+
+                
+                <!-- Moving towards player -->
+                <div class="col-lg-6">
+                    <p>
+                        <b><u>Attacking and moving towards player without coverpoint.</u></b> If there were no suitable coverpoints nearby, the enemies would 
+                        move towards the player. When they were close enough and the player in sight, they would stop and shoot towards the player. The shooting 
+                        logic was almost identical to when enemies were at coverpoints. Instead, they aimed for a shorter duration before shooting, making the first 
+                        shot a lot faster.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-responsive img-border" id="img-popup" src="img/gunbritt/noWaypoint.jpg" alt="">
                 </div>
             </div>
             <div class="clearfix"></div>
