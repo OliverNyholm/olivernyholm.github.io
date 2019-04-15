@@ -108,7 +108,7 @@
                     <p>
                         Spite - Ragnars Mjöd was my sixth project at the Game Assembly. The game was created
                         in our own C++ and DirectX11 engine, Yellowsnow over the span of 10 weeks at 50% work time.
-                        The projects reference game was no surpise <i>Diablo 3</i>.
+                        The projects reference game was no surpise, <i>Diablo 3</i>.
                     </p>
                     <p>
                         <i>"After an all night bender with your friends you wake up alone in the snow and surrounded by the undead.
@@ -186,7 +186,7 @@
                         they had leaders that would do pathfinding and checking sight to the player, while the "minions" were idling.
                     </p>
                     <p>
-                        The way leaders were determined was by a simple function, that was called when enemies were spawned, or when their current leader
+                        The way leaders were determined was by a simple function that was called when enemies were spawned or when their current leader
                         was killed. Below is the code for finding a nearby leader. The game had a PollingStation, which the enemies used to get entity IDs from.
                         In this case, they asked for a list of all current leader IDs. If there was none nearby, they become the leader and add themselves to the list.
                         If they were previously following a leader, they changed their state to engaged, moving towards the player.
@@ -198,14 +198,14 @@
                 <div class="col-md-12">
                     <p>
                         Another issue that needed to be solved for the Draugr was that when there were so many melee entities, I could not have 50
-                        units all grouping around the player trying to attack whilest trying to separate at the same time. To solve that issue,
+                        units all grouping around the player trying to attack whilst trying to separate at the same time. To solve that issue,
                         I placed 12 attack slots that the Draugr could fight at. This would only allow twelve characters to attack the player at the same time,
                         which brings me to the next issue; making sure the others wait for their turn.
                     </p>
                 </div>
                 <div class="col-md-6">
                         <p>
-                        The solution to that issue was to check in front of the Draugr, seeing if there was any other units waiting for their turn.
+                        The solution to that issue was to check in front of the Draugr, seeing if there were any other units waiting for their turn.
                         Below is a node in the behaviour tree, that was called only a few times per second. First, they would check if they had an attack slot,
                         and would in that case ignore if there were any others waiting ahead of them. They would also ignore checking if there were any others waiting in front of them
                         at a certain distance, which would allow them to try move closer, creating more circular formations surrounding the player. If they were close enough, they
