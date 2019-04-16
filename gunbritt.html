@@ -94,7 +94,10 @@
                     <hr>
                 </div>
                 <div class="col-lg-6">
-                    <img class="img-responsive img-border" src="img/gunbritt/enemy.jpg" alt="">
+                    <div class="video-container" >
+                        <iframe width="560" height="349" src="https://www.youtube.com/embed/7Mr05p_wsaA" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <h2 class="intro-text text-center">
@@ -212,11 +215,11 @@
                 <!-- About finding waypoints -->
                 <div class="col-lg-6">
                     <p>
-                        <b><u>Finding and moving to other coverpoint.</u></b> In this part the enemy first checks if it already doesn't have 
+                        <b><u>Finding and moving to other coverpoint.</u></b> In this part the enemy first checks if it doesn't have 
                         a coverpoint. If it doesn't, the enemy does another check to see if there are any nearby coverpoints that are of use.
                         If there is one that is close enough, the enemy moves to that coverpoint. The bool, isPlayer in the <i>MoveTo</i> node 
                         is a simple solution to know if the target position is the players transform or if it should collect the latest targetID 
-                        entered into the behaviour tree's blackboard.
+                        entered into the behaviour tree's blackboard. In this case, the latest ID is the found coverpoint.
                     </p>
                     <p>
                         I posted a picture of the code for how the enemies find nearby coverpoints. They get a list of coverpoints from a polling station.
